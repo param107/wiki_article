@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block sidebar %}
+<ul>
+    <li><a href="/wikis/all">Cancel</a> </li>
+
+
+</ul>
+{% endblock %}
+
+{% block content %}
+    <h4>hi USERNAME: {{ user.username }}you are logged in</h4>
+<form action="" method="post">{% csrf_token %}
+<ul>
+    {{editform.as_ul}}
+</ul>
+    <input type="submit"name="submit"value="Save Article">
+
+</form>
+{% endblock %}

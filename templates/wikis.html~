@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+        <ul>
+            <li><a href="/wikis/all">Articles</a> </li>
+            <li><a href="/wikis/create">Create Article</a> </li>
+
+        </ul>
+        {% endblock %}
+
+
+
+<li><a href="/mywikis/all">Articles</a> </li>
+<h4>hi USERNAME: {{ user.username }}you are logged in</h4>
+{% if wikis.count > 0 %}
+
+{% for wiki in wikis %}
+<div>
+<h2><a href="/wikis/get/{{ wiki.id }}/">{{ wiki.title }}</a></h2>
+<p>{{ wiki.body }}</p>
+<p>{{ wiki.likes }} people like this article</a></p>
+</div>
+{% endfor %}
+
+{% else %}
+
+<p>None to show !</p>
+{% endif %}
+
+
+
+{% endblock %}
