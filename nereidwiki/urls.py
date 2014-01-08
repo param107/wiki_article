@@ -6,8 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    (r'^wikis/', include('wiki.urls')),
-    (r'^mywikis/', include('wiki.urls')),
+    (r'^/', include('wiki.urls')),
     url(r'^admin/',include(admin.site.urls)),
     # url(r'^$', 'nereidwiki.views.home', name='home'),
     # url(r'^nereidwiki/', include('nereidwiki.foo.urls')),
