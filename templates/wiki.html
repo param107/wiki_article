@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block sidebar %}
+
+    <ul xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+            <li><a href="/wikis/all">Articles</a> </li>
+            <li><a href="/admin">Admin</a> </li>
+
+        </ul>
+        {% endblock %}
+{% block content %}
+     <h4>hi USERNAME: {{ user.username }}you are logged in</h4>
+<h1>{{ wiki.title }}</h1>
+<p>{{ wiki.body }}</p>
+ {% if wiki.thumbnail %}
+   <p><img src="/static/assets/{{ wiki.thumbnail }}" width="200"/></p>
+    {% endif %}
+<p>{{ wiki.likes }} people like this article</a></p>
+<p><a href="/wikis/like/{{ wiki.id }}">Like</a> </p>
+
+{% endblock %}
